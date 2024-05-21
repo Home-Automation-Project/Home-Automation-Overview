@@ -24,7 +24,7 @@ Ability to play personal collection, of from stream services from phone, in any 
 6d flight simulator with motion cockpit, full airplane controlls, full view monitors
 ### Golf Simulator
 ### Arcade
-
+<br>
 # Bathroom
 ## Bathtub
 Ability to auotmatically fill the bathtub with an amount of water, and temperature, desired by an individual
