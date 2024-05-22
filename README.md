@@ -22,80 +22,51 @@ Automated mop and vacume robotic system
 
 ---
 # Yard
-## Garden
-Soil moisture monitoring.  Weather monitoring.  Automated watering system.  
-## Mowing
-Robotic mowing system
-## Sprinklers
-Auto adjust watering schedule based on weather.  Auto-adjust station watering schedule and length of watering due to soil type, land slope, plant type and sprinkler head coverage serviced by a particular station.
-## Pool
-Automatic pool filtration, cleaning and heating.  Pool monitoring for safety in case a child enters the enclosure unattended.  
-## Aquaponics
-## Rabbits/Fowl (chickens, quail)
-Automatic heating system based on weather, food and water monitoring
+- **Garden**:  Soil moisture monitoring.  Weather monitoring.  Automated watering system.  
+- **Mowing**:  Robotic mowing system
+- **Sprinklers**:  Auto adjust watering schedule based on weather.  Auto-adjust station watering schedule and length of watering due to soil type, land slope, plant type and sprinkler head coverage serviced by a particular station.
+- **Pool**:  Automatic pool filtration, cleaning and heating.  Pool monitoring for safety in case a child enters the enclosure unattended.  
+- **Aquaponics**:
+- **Rabbits/Fowl (chickens, quail)**:  Automatic heating system based on weather, food and water monitoring
 
 
 ---
 # Garage
-## Garage Door:  
-Ability to open/close with voice, routine, car, phone
-## Lights:  
-Ability to turn on/off with voice, movement
-## Voice Assistant
-Ability to recieve notifications from the home.  Intercom system.  Play music/media
-## Sawdust filtration system
-Automated sawdust filtration system for woodworking tools
+- **Garage Door**:  Ability to open/close with voice, routine, car, phone
+- **Lights**:  Ability to turn on/off with voice, movement
+- **Voice Assistant**:  Ability to recieve notifications from the home.  Intercom system.  Play music/media
+- **Sawdust filtration system**: Automated sawdust filtration system for woodworking tools
 ## Automobile
-### Sensors
-Full side, backup sensors and cameras.  HUD dashboard.  Engine alert monitoring.  Geo ringfence alerting
-### Maintenance
-Full maintenance tracking/alerting.  Built in "how to" videos for "fix it yourself" maintenance work
+- **Sensors**: Full side, backup sensors and cameras.  HUD dashboard.  Engine alert monitoring.  Geo ringfence alerting
+- **Maintenance**: Full maintenance tracking/alerting.  Built in "how to" videos for "fix it yourself" maintenance work
 
 ---
 # Media/Games
-## Movies:  
-Ability to watch personal movie and TV show collections from anywhere on a internet enabled device.  Ability to search by genre, title, rating, actor, etc.  
-### Home Movie Theater
-Themed, stadium seating.  Ability to dim lights, turn on tv/projector, lower projector screen automatically when you want to start a movie.  Limited access candy dispensers
-## Pictures:  
-Pictures backed up to cloud, ability to view anywhere, ability to search by date, person, location
-## Music:
-Ability to play personal collection, of from stream services from phone, in any room, or across rooms
+- **Movies**:  Ability to watch personal movie and TV show collections from anywhere on a internet enabled device.  Ability to search by genre, title, rating, actor, etc.  
+- **Home Movie Theater**: Themed, stadium seating.  Ability to dim lights, turn on tv/projector, lower projector screen automatically when you want to start a movie.  Limited access candy dispensers
+- **Pictures**:  Pictures backed up to cloud, ability to view anywhere, ability to search by date, person, location
+- **Music**:  Ability to play personal collection, of from stream services from phone, in any room, or across rooms
 ## Gaming Systems:
-### Race Simulator
-4d race simulator with motion cockpit, force feedback controlls, full view monitors
-### Flight Simulator
-6d flight simulator with motion cockpit, full airplane controlls, full view monitors
-### Golf Simulator
-Projected golf simulator with putting green, golf courses and swing monitoring and analysis.
-### Arcade
-Multi-player full sized old school arcade system
+- **Race Simulator**: 4d race simulator with motion cockpit, force feedback controlls, full view monitors
+- **Flight Simulator**: 6d flight simulator with motion cockpit, full airplane controlls, full view monitors
+- **Golf Simulator**:  Projected golf simulator with putting green, golf courses and swing monitoring and analysis.
+- **Arcade**:  Multi-player full sized old school arcade system
 
 ---
 # Bathroom
-## Bathtub
-Ability to auotmatically fill the bathtub with an amount of water, and temperature, desired by an individual
-## Towels
-Heated towel system
-## Floor
-Heated floor
-## Smart Mirror
-Mirror can also display schedule for the day, weather, commute information, etc
-## Ambiance
-Lights/vent can be turned on by voice, motion, etc.  Lights can be in different colors and brightness, controlled by routine or voice
+- **Bathtub**:  Ability to auotmatically fill the bathtub with an amount of water, and temperature, desired by an individual
+- **Towels**:  Heated towel system
+- **Floor**:  Heated floor
+- **Smart Mirror**:  Mirror can also display schedule for the day, weather, commute information, etc
+- **Ambiance**:  Lights/vent can be turned on by voice, motion, etc.  Lights can be in different colors and brightness, controlled by routine or voice
 
 ---
 # Kitchen
-## Faucets
-motion engaged faucets.  Stove has pot filler with insta-hot water.  Water purification system on the line
-## Menu/Inventory system
-Ability to view menu and videos of how to cook certain recipies.  Ability to create dishes based on ingredients on hand.  Complete inventory system which subtracts ingredients from inventory as cook.  Ability to view a "cost" of a particular dish.  Ability to add to inventory via barcode scanning, voice, or typing from main system or phone.  Tracks expiration dates of inventory items to limit food waste.  Ability to create shopping lists automatically from a menu or via voice.  Ability to view shopping list on phone.  Ability to text a shopping list to someone.
-## Fridge/Freezer Temperature
-Temperature monitoring and reporting
-## Food Waste System
-Ability to hygenically compost food waste
-## Drink maker
-Automated drink maker (via voice, touch screen or phone).  Can create specialized drinks
+- **Faucets**:  motion engaged faucets.  Stove has pot filler with insta-hot water.  Water purification system on the line
+- **Menu/Inventory system**:  Ability to view menu and videos of how to cook certain recipies.  Ability to create dishes based on ingredients on hand.  Complete inventory system which subtracts ingredients from inventory as cook.  Ability to view a "cost" of a particular dish.  Ability to add to inventory via barcode scanning, voice, or typing from main system or phone.  Tracks expiration dates of inventory items to limit food waste.  Ability to create shopping lists automatically from a menu or via voice.  Ability to view shopping list on phone.  Ability to text a shopping list to someone.
+- **Fridge/Freezer Temperature**:  Temperature monitoring and reporting
+- **Food Waste System**:  Ability to hygenically compost food waste
+- **Drink maker**:  Automated drink maker (via voice, touch screen or phone).  Can create specialized drinks
 
 ---
 # Gym/Health
