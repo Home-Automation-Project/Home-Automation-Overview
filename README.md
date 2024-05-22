@@ -2,24 +2,16 @@
 Overview of the entire home automation project with links to individual projects.  The goal is to create a perfectly automated home that is also energy efficient, safe, and economically implemented. As much as possible instructions for DIY will be provided instead of expensive third-party systems.
 
 # MISC
-## HVAC
-Multi-zoned duct system, smart thermostats (routines, ability to be controlled remotely, etc), air filtration system.  Temperature can be set independently in each room (can be by voice or automatically by individual presense detection).  Internal and external air quality monitoring and reporting.  Automated air filtration in each bedroom
-## Internet
-Multiple VLAN, full house coverage wifi, security, intrusion detection, filtration, add blocker, remote monitoring, guest account with QR code access.
+- **HVAC**:  Multi-zoned duct system, smart thermostats (routines, ability to be controlled remotely, etc), air filtration system.  Temperature can be set independently in each room (can be by voice or automatically by individual presense detection).  Internal and external air quality monitoring and reporting.  Automated air filtration in each bedroom
+- **Internet**:  Multiple VLAN, full house coverage wifi, security, intrusion detection, filtration, add blocker, remote monitoring, guest account with QR code access.
+- **Security**:  External cameras with facial detection.  Window/door sensors. Motion sensors in common walk areas.  Glass breakage detection.  External monitoring and cellular alerting.  Ability to restrict access to a given room by personal id (face, proximity), access badge, biometric or access code.  Exterior doors can be opened by key, access code or biometric, can set up temp. guest accounts that have auto-expiration, and can unlock door remotely via phone or voice.
+- **Home Automation Server**:  Server for home automation also suports routines, if-this-then-that logic, supports existing technologies, remotely accessible.
+- **Floor Cleaning**:  Automated mop and vacume robotic system
 ## Utilities
-### Electricity
-House electricity backup.  Electricity consumption reporting in real-time by circuit/applicances
-### Water
-Water usage reporting in real-time.  Leak detection with automatic shutoff.  Tankless water heater, water softener and sediment filtration on main line
-### Natural Gas
-Gas usage reporting in real-time.   Leak detection with automatic shutoff
-## Security
-External cameras with facial detection.  Window/door sensors. Motion sensors in common walk areas.  Glass breakage detection.  External monitoring and cellular alerting.  Ability to restrict access to a given room by personal id (face, proximity), access badge, biometric or access code.  Exterior doors can be opened by key, access code or biometric, can set up temp. guest accounts that have auto-expiration, and can unlock door remotely via phone or voice.
-## Home Automation Server
-Server for home automation also suports routines, if-this-then-that logic, supports existing technologies, remotely accessible.
-## Floor Cleaning
-Automated mop and vacume robotic system
-
+- **Electricity**:  House electricity backup.  Electricity consumption reporting in real-time by circuit/applicances
+- **Water**:  Water usage reporting in real-time.  Leak detection with automatic shutoff.  Tankless water heater, water softener and sediment filtration on main line
+- **Natural Gas**:  Gas usage reporting in real-time.   Leak detection with automatic shutoff
+  
 ---
 # Yard
 - **Garden**:  Soil moisture monitoring.  Weather monitoring.  Automated watering system.  
