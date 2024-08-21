@@ -66,3 +66,7 @@ Overview of the entire home automation project with links to individual projects
 - **Gym Equipment**: See page for a full list of gym equipment and setup
 - **Health monitoring system**: Ability to get weight, BMR, body fat percentage, blood pressure, EKG, joint ROM
 - **Exercise Bike**: Exercise bike with travel screen and distance/speed indicators
+- **VO2 Max**
+- **DexaBody**
+- **3D Body Scan**
+- **Massage**
