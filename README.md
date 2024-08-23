@@ -3,26 +3,28 @@ Overview of the entire home automation project with links to individual projects
 
 ## Rooms in a home
 - [Bathroom](./rooms/bathroom.md)
-- [Bedroom](./rooms/bedroom.md)
+- [Bedroom (guest)](./rooms/bedroom.md)
+- [Bedroom (kids)](./rooms/bedroom.md)
+- [Bedroom (master)](./rooms/bedroom.md)
 - [Gaming Room](./rooms/game.md)
-- [Gaming Room](./rooms/kitchen.md)
 - [Kitchen](./rooms/kitchen.md)
 - [Media/Movie Room](./rooms/media.md)
 
 
 ## Outdoors
-- [Garden](./outdoors/pool.md)
+- [Garden](./outdoors/garden.md)
+- [Husbandry](./outdoors/animals.md)
 - [Lawn](./outdoors/lawn.md)
 - [Pool](./outdoors/pool.md)
-- [Husbandry](./outdoors/animals.md)
 
 
 ## Non-living space
 - [Garage](./other/garage.md)
+- [Storage](./other/storage.md)
 
 
 ## MISC
+- [Floor cleaning](./other/floors.md)
+- [Home Automation Server](./other/had_server.md)
 - [Security](./other/security.md)
 - [Utilities & HVAC](./other/utils.md)
-- [Home Automation Server](./other/had_server.md)
-- [Floor cleaning](./other/floors.md)
