@@ -1,14 +1,31 @@
 # Home-Automation-Overview
 Overview of the entire home automation project with links to individual projects.  The goal is to create a perfectly automated home that is also energy efficient, safe, and economically implemented. As much as possible instructions for DIY will be provided instead of expensive third-party systems.
 
-## Rooms in a home
+## Public and Entertaining Rooms
+- [Family Room](./rooms/family_room.md)
+- [Gaming Room](./rooms/game.md)
+- [Library](./rooms/library.md)
+- [Media/Movie Room](./rooms/media.md)
+- [Living Room](./rooms/living_room.md)
+- [Office](./rooms/office.md)
+
+
+## Private Living Quarters
 - [Bathroom](./rooms/bathroom.md)
 - [Bedroom (guest)](./rooms/bedroom.md)
 - [Bedroom (kids)](./rooms/bedroom.md)
 - [Bedroom (master)](./rooms/bedroom.md)
-- [Gaming Room](./rooms/game.md)
+- [Den](./rooms/den.md)
+- [Nursery](./rooms/nursery.md)
+
+
+## Service Rooms
+- [Dining Room](./other/dining.md)
+- [Garage](./other/garage.md)
+- [Infirmary](./rooms/infirmary.md)
 - [Kitchen](./rooms/kitchen.md)
-- [Media/Movie Room](./rooms/media.md)
+- [Laundry Room](./rooms/laudndry.md)
+- [Storage](./other/storage.md)
 
 
 ## Outdoors
@@ -16,11 +33,6 @@ Overview of the entire home automation project with links to individual projects
 - [Husbandry](./outdoors/animals.md)
 - [Lawn](./outdoors/lawn.md)
 - [Pool](./outdoors/pool.md)
-
-
-## Non-living space
-- [Garage](./other/garage.md)
-- [Storage](./other/storage.md)
 
 
 ## MISC
