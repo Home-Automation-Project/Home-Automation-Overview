@@ -1,0 +1,1 @@
+- **Pool**:  Automatic pool filtration, cleaning and heating.  Pool monitoring for safety in case a child enters the enclosure unattended.  

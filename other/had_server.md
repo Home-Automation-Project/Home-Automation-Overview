@@ -1,0 +1,1 @@
+- **Home Automation Server**:  Server for home automation also suports routines, if-this-then-that logic, supports existing technologies, remotely accessible.

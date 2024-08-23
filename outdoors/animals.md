@@ -1,0 +1,2 @@
+- **Aquaponics**:
+- **Rabbits/Fowl (chickens, quail)**:  Automatic heating system based on weather, food and water monitoring
