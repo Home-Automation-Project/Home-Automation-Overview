@@ -22,7 +22,8 @@ MakeMKV
 ### Automated Digitization
 I would **highly recommend** that you use the **docker setup** which we created in [this project]() which will allow you to launch your entire system through a simple docker-compose.
 
-If you want to manually setup your own system outside docker then you can take a look at the following.
+If you want to manually setup your own system outside docker then you can take a look at the following:
+
 **Front End**
 - [Ombi](https://docs.ombi.app/)  Media request interface
 
