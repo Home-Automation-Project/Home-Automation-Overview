@@ -9,9 +9,11 @@ https://www.plexopedia.com/plex-media-server/general/operating-system-plex/
 Due to the lighter weight nature, and to support 4k HDR tone mapping, I recommend using Linux.
 
 ## Plex Installation
+### Create a Plex account
 
+### Install Plex
 
-**Ports**
+#### Ports
 The most important port to make sure your firewall allows is the main TCP port the Plex Media Server uses for communication:
 TCP: 32400 (access to the Plex Media Server) [required]
 
