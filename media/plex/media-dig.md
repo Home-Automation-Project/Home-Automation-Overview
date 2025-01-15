@@ -24,16 +24,18 @@ I would **highly recommend** that you use the **docker setup** which we created 
 
 If you want to manually setup your own system outside docker then you can take a look at the following.
 **Front End**
-[Ombi](https://docs.ombi.app/)  Media request interface
+- [Ombi](https://docs.ombi.app/)  Media request interface
+
 [**Collection Managers**](https://wiki.servarr.com/)
-[Radarr](https://wiki.servarr.com/radarr)  Movie collection manager
-[Sonarr](https://wiki.servarr.com/sonarr)  TV collection manager
-[Lidarr](https://wiki.servarr.com/lidarr)  Music collection manager
-[Readarr](https://wiki.servarr.com/readarr)  E-book and audiobook collection manager
+- [Radarr](https://wiki.servarr.com/radarr)  Movie collection manager
+- [Sonarr](https://wiki.servarr.com/sonarr)  TV collection manager
+- [Lidarr](https://wiki.servarr.com/lidarr)  Music collection manager
+- [Readarr](https://wiki.servarr.com/readarr)  E-book and audiobook collection manager
 
 **Indexers**
-Jackett
+- Jackett
+
 **Downloaders**
-[NZBGet](https://nzbget.com/download/)  Download manager
+- [NZBGet](https://nzbget.com/download/)  Download manager
 
 ## Music
