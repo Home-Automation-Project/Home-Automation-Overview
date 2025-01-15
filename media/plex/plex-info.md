@@ -28,7 +28,9 @@ Warning!: For security, we very strongly recommend that you do not allow any of 
 # media 
 
 ## Digitization 
-### Manual digitization
+It is always recommended that you retain your physical media as proof of licensing.  I bought large CD holders and put in the disks and put these into storage and threw away the containers to save space
+
+### Manual Digitization
 To manually copy your media you will need a computer and a corresponding ROM device (e.g. DVD for DVDs and CDs, Blueray for Blueray, DVD and CDs).
 **Rip the disk**.  
 You can use MakeMKV.  If the disk cannot be ripped due to being "protected" you can usually use ShrinkDVD to rip it to disk and then use MakeMKV to make your Plex files.
@@ -45,7 +47,8 @@ MakeMKV
 5.  Click Open Disk, Select the Drive of your ROM
 6.  After scan finishes select all folders it finds and then click on Backup!
 
-
+### Automated Digitization
+The following instruction is to setup a system through which you can request media which you own and if indexers can find existing copies these will be automatically downloaded into your plex server.  You can install all of these services manually but I would recommend using the included docker versions via the included docker compose which will give you all of these systems.
 
 ## naming and organizing 
 Create your base directories for media storage
@@ -90,6 +93,47 @@ e.g.
       Teaser Trailer-trailer.mp4
       Theatrical Trailer #1-trailer.mp4
       Theatrical Trailer #2-trailer.avi
+
+**TV Shows**
+[TV shows](https://support.plex.tv/articles/naming-and-organizing-your-tv-show-files/) can be season-based, date-based, a miniseries, or more. Both the folder structure and each episode filename must be correct for the best matching experience. If you’re not sure whether a show is season- or date-based, check The Movie Database (TMDB) or The TVDB and name it as it appears there.
+
+Some important notes:
+- For the “Plex TV Series” agent, it is recommended to always include the year alongside the series title in folder and file names, e.g. /Band of Brothers (2001)/Season 01/Band of Brothers (2001) - s01e01 - Currahee.mkv
+- Be sure to use the English word “Season” when creating season directories, even if your content is in another language.
+- Many of our naming instructions mention having Optional_Info at the end of the file name. As the label suggests, it’s optional, but many people like to use it for information about the files in question. Such optional info is ignored by Plex when matching content with legacy agents, but it is used in the Plex TV Series agent to give a hint for matching. If you want info to be ignored put the optional info in brackets. e.g. /Band of Brothers (2001) - s01e01 - Currahee [1080p Bluray].mkv
+- We use .ext as a generic file extension in the naming/organizing instructions. You should use the appropriate file extension for your files, of course. (Some operating systems such as Windows may hide your file extensions by default.)
+- If you are using the “Plex TV Series” agent, you can optionally include the TMDB or TVDB show ID in the folder name to improve matching. If you choose to do that, it must be inside curly braces: ShowName (2020) {tmdb-123456} or ShowName (2020) {tvdb-123456}, where 123456 is the show ID. An example can be found at the end of the article.
+As an alternative, you can also use a .plexmatch file
+e.g.
+/TV Shows
+   /Doctor Who (1963)
+      /Season 01
+         Doctor Who (1963) - s01e01 - An Unearthly Child (1).mp4
+         Doctor Who (1963) - s01e02 - The Cave of Skulls (2).mp4
+   /From the Earth to the Moon (1998)
+      /Season 01
+         From the Earth to the Moon (1998) - s01e01.mp4
+         From the Earth to the Moon (1998) - s01e02.mp4
+   /Grey's Anatomy (2005)
+      /Season 00
+         Grey's Anatomy (2005) - s00e01 - Straight to the Heart.mkv
+      /Season 01
+         Grey's Anatomy (2005) - s01e01 - pt1.avi
+         Grey's Anatomy (2005) - s01e01 - pt2.avi
+         Grey's Anatomy (2005) - s01e02 - The First Cut is the Deepest.avi
+         Grey's Anatomy (2005) - s01e03.mp4
+      /Season 02
+         Grey's Anatomy (2005) - s02e01-e03.avi
+         Grey's Anatomy (2005) - s02e04.m4v
+   /The Colbert Report (2005)
+      /Season 08
+         The Colbert Report (2005) - 2011-11-15 - Elijah Wood.avi
+   /The Office (UK) (2001) {tmdb-2996}
+      /Season 01
+         The Office (UK) - s01e01 - Downsize.mp4
+   / The Office (US) (2005) {tvdb-73244}
+      /Season 01
+         The Office (US) - s01e01 - Pilot.mkv
 
 ## backups
 
