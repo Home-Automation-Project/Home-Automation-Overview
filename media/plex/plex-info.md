@@ -27,28 +27,8 @@ Warning!: For security, we very strongly recommend that you do not allow any of 
 
 # media 
 
-## Digitization 
-It is always recommended that you retain your physical media as proof of licensing.  I bought large CD holders and put in the disks and put these into storage and threw away the containers to save space
-
-### Manual Digitization
-To manually copy your media you will need a computer and a corresponding ROM device (e.g. DVD for DVDs and CDs, Blueray for Blueray, DVD and CDs).
-**Rip the disk**.  
-You can use MakeMKV.  If the disk cannot be ripped due to being "protected" you can usually use ShrinkDVD to rip it to disk and then use MakeMKV to make your Plex files.
-Detailed Instructions
-
-MakeMKV
-
-
-**DVD Shrink**
-1.  Set settings:  Edit > Preferences
-2.  Output Files Tab:  Select all three of the following: Remove Macrovision Protection; Remove P-UOPs; Remove Layer Break
-3.  Stream Selections Tab:  Audio Language and Coding Types is put to "All Languages" and "AC3 or LPCM"
-4.  Exit Settings
-5.  Click Open Disk, Select the Drive of your ROM
-6.  After scan finishes select all folders it finds and then click on Backup!
-
-### Automated Digitization
-The following instruction is to setup a system through which you can request media which you own and if indexers can find existing copies these will be automatically downloaded into your plex server.  You can install all of these services manually but I would recommend using the included docker versions via the included docker compose which will give you all of these systems.
+## Media Digitization
+Look [here](media-dig.md) for information on how to digitize your existing media
 
 ## naming and organizing 
 Create your base directories for media storage
