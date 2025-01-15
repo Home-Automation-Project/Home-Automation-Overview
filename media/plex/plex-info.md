@@ -6,7 +6,7 @@ This document will include how to setup your plex server, digitize your media li
 plex can be hosted on Windows, Linux, docker, certain NAS devices.
 https://www.plexopedia.com/plex-media-server/general/operating-system-plex/
 
-Due to the lighter weight nature, and to support 4k HDR tone mapping I recommend using Linux.
+Due to the lighter weight nature, and to support 4k HDR tone mapping, I recommend using Linux.
 
 ## Plex Installation
 
@@ -57,10 +57,39 @@ Create your base directories for media storage
    /TV Shows
       television content
 
-**File Labeling**
-Labeling different editions of the same movie:  https://support.plex.tv/articles/multiple-editions/
-Labeling different versions of the same movie:  https://support.plex.tv/articles/200381043-multi-version-movies/
+### File Labeling
+**Movies**
+Movies are labeled with the name of the movie and the release year in parenthases.  e.g. Star Wars (1977)
+If you have multiple [**editions**](https://support.plex.tv/articles/multiple-editions/) you can indicate these inside {} with the keyword edition.  e.g. Blade Runner (1982) {edition-Director's Cut}.
+Editions represent different releases of an item. So, the “theatrical release” vs the “Special Edition” of The Empire Strikes Back. Or “Theatrical” vs “Director’s Cut” vs “Final Cut” of Blade Runner. Editions would also be appropriate for a 2D vs 3D version of a movie.
 
+If you have multiple [**versions**](https://support.plex.tv/articles/200381043-multi-version-movies/) you can indicate these as MovieName (Release Year) - ArbitraryText.ext.  e.g. Pulp Fiction (1994) - 1080p.mkv  Pulp Fiction (1994) - SD.m4v
+Versions all represent the same release of an item. So, you can have multiple versions (1080p vs 480p, HEVC vs H.264, MP4 vs MKV) of The Empire Strikes Back, but they’re all for the same theatrical release of the movie
+
+If you have [**special features**](https://support.plex.tv/articles/local-files-for-trailers-and-extras/), extras, etc you can label them like this.  Movies/MovieName (Release Date)/Descriptive_Name-Extra_Type.ext
+Where -Extra_Type is one of:
+
+-behindthescenes
+-deleted
+-featurette
+-interview
+-scene
+-short
+-trailer
+-other
+
+e.g.
+/Movies
+   /Avatar (2009)
+      Avatar (2009).mkv
+      Arrival-scene.mp4
+      Bar Fight-deleted.mp4
+      Performance Capture-behindthescenes.mkv
+      Sigourney Weaver-interview.mp4
+      Stephen Lang-interview.mp4
+      Teaser Trailer-trailer.mp4
+      Theatrical Trailer #1-trailer.mp4
+      Theatrical Trailer #2-trailer.avi
 
 ## backups
 
