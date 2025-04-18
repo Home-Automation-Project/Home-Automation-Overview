@@ -39,4 +39,4 @@ Overview of the entire home automation project with links to individual projects
 - [Floor cleaning](./other/floors.md)
 - [Home Automation Server](./other/had_server.md)
 - [Security](./other/security.md)
-- [Utilities & HVAC](./other/utils.md)
+- [Utilities & HVAC](./other/hvac_utilities.md)
