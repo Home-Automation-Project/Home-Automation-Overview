@@ -22,7 +22,7 @@ Overview of the entire home automation project with links to individual projects
 ## Service Rooms
 - [Dining Room](./other/dining.md)
 - [Garage](./other/garage.md)
-- [Infirmary](./rooms/infirmary.md)
+- [Infirmary](./rooms/Infirmary.md)
 - [Kitchen](./rooms/kitchen.md)
 - [Laundry Room](./rooms/laudndry.md)
 - [Storage](./other/storage.md)
