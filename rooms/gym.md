@@ -8,3 +8,4 @@
 - **DexaBody**
 - **3D Body Scan**
 - **Massage**
+- **TENs**
