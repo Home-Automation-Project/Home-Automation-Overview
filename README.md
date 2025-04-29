@@ -37,6 +37,7 @@ Overview of the entire home automation project with links to individual projects
 
 ## MISC
 - [Floor cleaning](./other/floors.md)
+- [Servers & Services]()
 - [Home Automation Server](./other/had_server.md)
 - [Security](./other/security.md)
 - [Utilities & HVAC](./other/hvac_utilities.md)
