@@ -2,9 +2,9 @@
 
 | Domain    | Server |
 | -------- | ------- |
-| Media streaming (movies/TV shows)  | [Plex](servers/plex.md) |
+| Media streaming (movies/TV shows)  | [Plex](plex.md) |
 | Picture backups | []()  |
-| Logging system  | [other/servers/loki.md](Loki)  |
+| Logging system  | [Loki](loki.md)  |
 | Music streaming (personal library) | []() |
 | Network Security | []() |
 | Monitoring & Alerting | []() |
