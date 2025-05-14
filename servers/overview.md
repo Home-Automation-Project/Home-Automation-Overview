@@ -10,4 +10,5 @@
 | Monitoring & Alerting | []() |
 | Library Managment (Books, periodicals, & e-books) | []() |
 | Home Automation Services | [](Home Assistant)
-| VPN | [Wireguard]()
+| VPN | [Wireguard]() |
+| Kubernetes cluster | [k3s]() |
