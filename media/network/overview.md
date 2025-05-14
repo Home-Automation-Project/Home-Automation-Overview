@@ -1,6 +1,7 @@
 # Home Network Setup
 
 # Network
+I would recommend that you setup your network and servers in the following order.
 ## DNS
 ## Router and VLANs
 ## VPN
