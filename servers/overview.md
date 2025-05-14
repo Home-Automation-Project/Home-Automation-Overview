@@ -10,4 +10,4 @@
 | Monitoring & Alerting | []() |
 | Library Managment (Books, periodicals, & e-books) | []() |
 | Home Automation Services | [](Home Assistant)
-| VPN | [](WireGuard)
+| VPN | [Wireguard]()
