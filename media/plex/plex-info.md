@@ -26,13 +26,17 @@ TCP: 32469 (access to the Plex DLNA Server)
 Warning!: For security, we very strongly recommend that you do not allow any of these “additional” ports through the firewall or to be forwarded in your router, in cases specifically where your Plex Media Server is running on a machine with a public/WAN IP address. This includes those hosted in a data center as well as machines on a “local network” that have been put into the “DMZ” (the “de-militarized zone”) of the network router. This is not a setup that applies to most users.
 
 ## Plex Configuration 
-
-# media 
+# Server Environment
+There server environment is made up of:
+1. media digitization
+2. your media (Plex Server and media files)
+3. "TV" like experience set and management
 
 ## Media Digitization
 Look [here](media-dig.md) for information on how to digitize your existing media
 
-## naming and organizing 
+## media 
+### naming and organizing 
 Create your base directories for media storage
 /Media
    /Movies
@@ -42,7 +46,7 @@ Create your base directories for media storage
    /TV Shows
       television content
 
-### File Labeling
+#### File Labeling
 **Movies**
 Movies are labeled with the name of the movie and the release year in parenthases.  e.g. Star Wars (1977)
 If you have multiple [**editions**](https://support.plex.tv/articles/multiple-editions/) you can indicate these inside {} with the keyword edition.  e.g. Blade Runner (1982) {edition-Director's Cut}.
