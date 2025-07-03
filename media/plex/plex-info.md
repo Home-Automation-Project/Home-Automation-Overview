@@ -27,10 +27,11 @@ Warning!: For security, we very strongly recommend that you do not allow any of 
 
 ## Plex Configuration 
 # Server Environment
-There server environment is made up of:
-1. media digitization
-2. your media (Plex Server and media files)
-3. "TV" like experience set and management
+The server environment is made up of:
+1. Management tool (wizarr)
+2. Media digitization process
+3. Your media (Plex Server and media files)
+4. "TV" like experience set and management
 
 ## Media Digitization
 Look [here](media-dig.md) for information on how to digitize your existing media
