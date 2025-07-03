@@ -3,6 +3,7 @@
 | Domain    | Server |
 | -------- | ------- |
 | Media streaming (movies/TV shows)  | [Plex](plex.md) |
+| Audio Books | Audiobookshelf  |[]() |
 | Picture backups | []()  |
 | Logging system  | [Loki](loki.md)  |
 | Music streaming (personal library) | []() |
