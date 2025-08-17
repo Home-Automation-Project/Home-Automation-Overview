@@ -3,7 +3,7 @@
 ## plex
 
 ## Books
-* Setup using a Raspberry Pi 4 and Kavita + Calibre-Web + Audiobookshelf
+* Setup using a Raspberry Pi 4 and Kavita + Calibre-Web + Audiobookshelf + LazyLibrarian
 * Kavita for comics, manga, and ebooks
 * Calibre-Web for traditional ebooks and metadata management
 * Audiobookshelf for audiobooks with sync and bookmarks
@@ -29,7 +29,7 @@
 
 
 `cd ~/media-server`
-8. Inside ~/media-server, create a [docker-compose.yml](./other/media/scripts/book-media-docker-compose.yml) file
+8. Inside ~/media-server, create a [docker-compose.yml](./scripts/book-media-docker-compose.yml) file
 9. Launch the Stack
 `cd ~/media-server`
 `docker-compose up -d`
@@ -129,7 +129,7 @@ NZBGet http://<pi-ip>:6789   nzbget / tegbzn6789 (default)
 `./dropbox_uploader.sh`
 
 ### Setup Script
-* [Backup Script](./other/media/scripts/book-media-backupscript.sh)
+* [Backup Script](./scripts/book-media-backupscript.sh)
 1. Create backup script on server
 2. Schedule with CRON
 `crontab -e`
@@ -140,4 +140,4 @@ NZBGet http://<pi-ip>:6789   nzbget / tegbzn6789 (default)
 `~/Dropbox-Uploader/dropbox_uploader.sh upload "$DEST/media.tar.gz" "/backups/$DATE-media.tar.gz"`
 
 ## Setup monitoring/alerting
-[View documentation](./other/alert_monitoring.md)
+[View documentation](../../other/alert_monitoring.md)
