@@ -1,0 +1,71 @@
+version: "3.8"
+
+services:
+
+  kavita:
+    image: jvmilazz0/kavita:latest
+    container_name: kavita
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./kavita/config:/kavita/config
+      - ./media:/kavita/media
+    restart: unless-stopped
+
+  calibre-web:
+    image: linuxserver/calibre-web
+    container_name: calibre-web
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Denver
+    volumes:
+      - ./calibre-web/config:/config
+      - ./media/books:/books
+    ports:
+      - "8083:8083"
+    restart: unless-stopped
+
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:latest
+    container_name: audiobookshelf
+    ports:
+      - "13378:80"
+    volumes:
+      - ./audiobookshelf/config:/config
+      - ./audiobookshelf/metadata:/metadata
+      - ./media/audiobooks:/audiobooks
+    restart: unless-stopped
+  nzbget:
+    image: linuxserver/nzbget
+    container_name: nzbget
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Denver
+    volumes:
+      - ./nzbget/config:/config
+      - ./downloads:/downloads
+    ports:
+      - "6789:6789"
+    restart: unless-stopped
+  lazylibrarian:
+    image: linuxserver/lazylibrarian
+    container_name: lazylibrarian
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Denver
+    ports:
+      - "5299:5299"
+    volumes:
+      - ./lazylibrarian/config:/config
+      - ./media/books:/books
+      - ./downloads:/downloads
+    # labels:
+    #   - "traefik.enable=true"
+    #   - "traefik.http.routers.lazylibrarian.rule=Host(`read-get.lthome.com`)"
+    #   - "traefik.http.routers.lazylibrarian.entrypoints=websecure"
+    #   - "traefik.http.routers.lazylibrarian.tls.certresolver=letsencrypt"
+    #   - "traefik.http.services.lazylibrarian.loadbalancer.server.port=5299"
+    restart: unless-stopped
