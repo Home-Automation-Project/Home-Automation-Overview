@@ -3,6 +3,8 @@
 # Network
 I would recommend that you setup your network and servers in the following order.
 ## DNS
+Setup Traefik on a Raspeberry pi (3B will work fine)
+
 ## Router and VLANs
 ## VPN
 ## Network monitoring

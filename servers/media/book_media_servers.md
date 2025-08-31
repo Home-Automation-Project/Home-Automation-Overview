@@ -62,7 +62,7 @@ WantedBy=multi-user.target
 * After a reboot (e.g. `sudo reboot`) you can verify services are running with `docker ps`
 
 ### Configure Download Service
-1. Open LazyLibrarian
+1. Open LazyLibrarian, click on Settings
 2. General Tab
 | Setting                 | Value                                  |
 | ----------------------- | -------------------------------------- |
