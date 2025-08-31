@@ -6,15 +6,52 @@ This document will include how to setup your plex server, digitize your media li
 plex can be hosted on Windows, Linux, docker, certain NAS devices.
 https://www.plexopedia.com/plex-media-server/general/operating-system-plex/
 
-Due to the lighter weight nature, and to support 4k HDR tone mapping, I recommend using Linux.
+Due to the lighter weight nature, and to support 4k HDR tone mapping, I recommend using Linux but will give the directions for both Linux and Windows installs below
 
 ## Plex Installation
 ### Create a Plex account
+1. Go to plex.tv and create an account
 
-### Install Plex
+### Install Plex (Window)
+1. Got o the [downloads page](https://www.plex.tv/media-server-downloads/?cat=computer&plat=windows)
+2. Select Plex Media Server
+3. Select Windows
+* Deselect Beta
+* Click Choose Distribution
+* Select Windows 64-bit
+4. Run the Installer:
+* Locate the downloaded installer file (an .exe file) and double-click it to start the installation process. 
+5. Complete the Installation Wizard:
+* Follow the on-screen prompts to install Plex Media Server. You can generally accept the default installation settings. 
+6. Launch the Plex Web App:
+* The installer will usually launch the Plex Web App automatically in your web browser. If not, you can start the server from the Start Menu to open it. 
+7. Sign In and Configure:
+* Sign in with your Plex account (or create a new one) when prompted. 
+* Give your server a memorable name. 
+* Add your media folders by creating new libraries for your movies, TV shows, music, and other media (see [below](#plex-configuration)). 
+
+### Install Plex (Linux)
+1. Got o the [downloads page](https://www.plex.tv/media-server-downloads/?cat=computer&plat=windows)
+2. Select Plex Media Server
+* Select the appropriate Linux package for your distribution (e.g., Ubuntu, Debian) and download it to your server.
+3. Install the Package
+* Open a terminal on your Linux server. 
+* Navigate to the directory where you downloaded the package. 
+* Install the downloaded package using your distribution's package manager. 
+** For example, on Ubuntu/Debian-based systems, you would use `sudo dpkg -i plexmediaserver_version_amd64.deb` or `sudo apt install ./plexmediaserver_version_amd64.deb. `
+4. Enable and Start the Plex Service 
+* Enable the Plex Media Server to start automatically on boot: `sudo systemctl enable plexmediaserver`
+5. Start the Plex Media Server: `sudo systemctl start plexmediaserver`
+6. Verify the service is running: `sudo systemctl status plexmediaserver`
+4. Access the Setup Wizard 
+* Open a web browser on your computer and go to your server's IP address followed by port 32400 (e.g., http://[your_server_ip_address]:32400).  The Plex setup wizard will appear.
+5. Sign In and Configure:
+* Sign in with your Plex account (or create a new one) when prompted. 
+* Give your server a memorable name. 
+* Add your media folders by creating new libraries for your movies, TV shows, music, and other media (see [below](#plex-configuration)). 
 
 #### Ports
-The most important port to make sure your firewall allows is the main TCP port the Plex Media Server uses for communication:
+If you run a firewall the most important port to make sure your firewall allows is the main TCP port the Plex Media Server uses for communication:
 TCP: 32400 (access to the Plex Media Server) [required]
 
 The following additional ports are also used within the local network for different services:
@@ -71,7 +108,7 @@ Where -Extra_Type is one of:
 e.g.
 /Movies
    /Avatar (2009)
-      Avatar (2009).mkv
+      Avatar (2009).mp4
       Arrival-scene.mp4
       Bar Fight-deleted.mp4
       Performance Capture-behindthescenes.mkv
@@ -124,4 +161,8 @@ e.g.
 
 ## backups
 
-
+## Media Digitization
+Though Plex offers its own media for streaming the main use of a Plex Server is so that you can stream media which you own.  To do this you will need to digitize your media.  This can be done in a couple of ways.
+* Manually digitize your media yourself
+* Use a sevice to download pre-digitized media
+The first option allows you to select soundtracks (e.g. languages), sub titles, special features, etc which you want to rip from your media, but it is time consuming.  The second option is quicker but involves more setup and usually some costs.  How to perform either option can be found [here](./media-dig.md)
