@@ -14,3 +14,5 @@
 | Home Automation Services | [Home Assistant]()
 | VPN | [Wireguard]() |
 | Kubernetes cluster | [k3s]() |
+| vacations | [AdventureLog]() |
+| personal tracker | [dawarich]() |
