@@ -4,7 +4,7 @@
 | -------- | ------- |
 | Media streaming (movies/TV shows)  | [Plex](./media//plex/plex-info.md) |
 | Audio Books | [Audiobookshelf](./media/book_media_servers.md) |
-| Picture backups | []()  |
+| Picture backups | [Immich]()  |
 | Logging system  | [Loki](loki.md)  |
 | Music streaming (personal library) | []() |
 | Network Security | []() |
