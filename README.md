@@ -30,15 +30,18 @@ Overview of the entire home automation project with links to individual projects
 
 ## Outdoors
 - [Garden](./outdoors/garden.md)
-- [Husbandry](./outdoors/animals.md)
+- [Husbandry/Pets](./outdoors/animals.md)
 - [Lawn](./outdoors/lawn.md)
 - [Pool](./outdoors/pool.md)
 
 
 ## MISC
+- [Automobile](./other/auto.md)
 - [Floor cleaning](./other/floors.md)
-- [Media Servers & Services](./servers/overview.md)
 - [Home Automation Server](./other/had_server.md)
+- [Media Servers & Services](./servers/overview.md)
+- [Other Servers & Services](.other/servers.md)
+- [Robotic Systems & Services](./other/Robotics.md)
 - [Security](./other/security.md)
 - [Utilities & HVAC](./other/hvac_utilities.md)
-- [Automobile](./other/auto.md)
+
