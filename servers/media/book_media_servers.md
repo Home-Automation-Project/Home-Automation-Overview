@@ -7,14 +7,13 @@
 * Kavita for comics, manga, and ebooks
 * Calibre-Web for traditional ebooks and metadata management
 * Audiobookshelf for audiobooks with sync and bookmarks
+* LazyLibrarian → unified media indexer for books and audiobooks
 
 ### Installation and setup
-1. Make sure you have: Raspberry Pi 4 (2GB)
-2. Raspberry Pi OS Lite (64-bit recommended)
-3. Internet connection
-4. SSH access or keyboard/monitor
-5. External storage (USB SSD recommended for media)
-6. Install docker
+1. Raspberry Pi 4 (2GB) with Raspberry Pi OS Lite (64-bit recommended)
+2. SSH access or keyboard/monitor
+3. [External storage](./storage.md)
+4. Install docker
 `sudo apt update && sudo apt upgrade -y`
 `sudo apt install vim -y`
 `curl -sSL https://get.docker.com | sh`
@@ -22,12 +21,7 @@
 `newgrp docker`
 `sudo apt install -y docker-compose`
 7. Create Folder Structure
-`mkdir -p ~/media-server/{kavita,calibre-web,audiobookshelf}`
-./media/books/          # For Calibre-Web
-./media/comics/         # For Kavita
-./media/audiobooks/     # For Audiobookshelf
-
-
+`mkdir -p ~/media-server`
 `cd ~/media-server`
 8. Inside ~/media-server, create a [docker-compose.yml](./scripts/book-media-docker-compose.yml) file
 9. Launch the Stack
@@ -107,18 +101,18 @@ No API key required
 
 ### Access Your Services
 Service	URL	Default Login Info
-Kavita	http://<pi-ip>:5000	Set on first run
-Calibre-Web	http://<pi-ip>:8083	admin / admin123
-Audiobookshelf	http://<pi-ip>:13378	Set on first run
-LazyLibrarian http://<pi-ip>:5299
-NZBGet http://<pi-ip>:6789   nzbget / tegbzn6789 (default)
+Kavita	http://<ip>:5000	Set on first run
+Calibre-Web	http://<ip>:8083	admin / admin123
+Audiobookshelf	http://<ip>:13378	Set on first run
+LazyLibrarian http://<ip>:5299
+NZBGet http://<ip>:6789   nzbget / tegbzn6789 (default)
 
 ## Backups
 | What                  | Path                 | Purpose                   |
 | --------------------- | -------------------- | ------------------------- |
-| Docker volumes/config | `./<service>/config` | App settings, DBs         |
-| Media                 | `./media/`           | Books, comics, audiobooks |
-| Downloads (optional)  | `./downloads/`       | In-progress items         |
+| Docker volumes/config | `/mnt/media/configs/<service>/config` | App settings, DBs         |
+| Media                 | `/mnt/media/books`           | Books, comics, audiobooks |
+| Downloads (optional)  | `/mnt/media/books/downloads/`       | In-progress items         |
 | Docker Compose file   | `docker-compose.yml` | Service definitions       |
 
 ### Install dropbox uploader

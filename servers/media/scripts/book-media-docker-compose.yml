@@ -8,8 +8,8 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./kavita/config:/kavita/config
-      - ./media:/kavita/media
+      - /mnt/configs/kavita/config:/kavita/config
+      - /mnt/media/books/comics:/kavita/media
     restart: unless-stopped
 
   calibre-web:
@@ -20,8 +20,8 @@ services:
       - PGID=1000
       - TZ=America/Denver
     volumes:
-      - ./calibre-web/config:/config
-      - ./media/books:/books
+      - /mnt/configs/calibre-web/config:/config
+      - /mnt/media/books/books:/books
     ports:
       - "8083:8083"
     restart: unless-stopped
@@ -32,9 +32,9 @@ services:
     ports:
       - "13378:80"
     volumes:
-      - ./audiobookshelf/config:/config
-      - ./audiobookshelf/metadata:/metadata
-      - ./media/audiobooks:/audiobooks
+      - /mnt/media/configs/audiobookshelf/config:/config
+      - /mnt/media/books/metaddata/audiobookshelf/metadata:/metadata
+      - /mnt/media/books/audiobooks:/audiobooks
     restart: unless-stopped
   nzbget:
     image: linuxserver/nzbget
@@ -44,8 +44,8 @@ services:
       - PGID=1000
       - TZ=America/Denver
     volumes:
-      - ./nzbget/config:/config
-      - ./downloads:/downloads
+      - /mnt/configs/nzbget/config:/config
+      - /mnt/media/books/downloads:/downloads
     ports:
       - "6789:6789"
     restart: unless-stopped
@@ -59,13 +59,15 @@ services:
     ports:
       - "5299:5299"
     volumes:
-      - ./lazylibrarian/config:/config
-      - ./media/books:/books
-      - ./downloads:/downloads
-    # labels:
-    #   - "traefik.enable=true"
-    #   - "traefik.http.routers.lazylibrarian.rule=Host(`read-get.lthome.com`)"
-    #   - "traefik.http.routers.lazylibrarian.entrypoints=websecure"
-    #   - "traefik.http.routers.lazylibrarian.tls.certresolver=letsencrypt"
-    #   - "traefik.http.services.lazylibrarian.loadbalancer.server.port=5299"
+      - /mnt/media/configs/lazylibrarian/config:/config
+      - /mnt/media/books/books:/books
+      - /mnt/media/books/audiobooks:/audiobooks
+      - /mnt/media/books/metadata/lazylibrarian:/config
+      - /mnt/media/books/downloads:/downloads
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.lazylibrarian.rule=Host(`read-get.lthome.com`)"
+      - "traefik.http.routers.lazylibrarian.entrypoints=websecure"
+      - "traefik.http.routers.lazylibrarian.tls.certresolver=letsencrypt"
+      - "traefik.http.services.lazylibrarian.loadbalancer.server.port=5299"
     restart: unless-stopped
