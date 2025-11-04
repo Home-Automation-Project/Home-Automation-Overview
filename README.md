@@ -34,16 +34,17 @@ Overview of the entire home automation project with links to individual projects
 - [Lawn](./outdoors/lawn.md)
 - [Pool](./outdoors/pool.md)
 
+**NOTE**
+This [document](./other/network/overview.md) gives the recommended network, server and services order of installation and setup
 
-## MISC
-- [Automobile](./other/auto.md)
-- [Floor cleaning](./other/floors.md)
+## Servers and Services
 - [Home Automation Server](./other/had_server.md)
 - [Media Servers & Services](./servers/overview.md)
 - [Other Servers & Services](.other/servers.md)
 - [Robotic Systems & Services](./other/Robotics.md)
+
+## MISC
+- [Automobile](./other/auto.md)
+- [Floor cleaning](./other/floors.md)
 - [Security](./other/security.md)
 - [Utilities & HVAC](./other/hvac_utilities.md)
-
-**NOTE**
-This [document](./other/network/overview.md) gives the recommended network, server and services order and setup

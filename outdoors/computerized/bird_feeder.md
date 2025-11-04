@@ -2,51 +2,33 @@
 Uses an ESP32-CAM at the feeder and a local classifier server (Python) that does the heavy lifting. It logs every visit, pushes MQTT events (for Home Assistant), and can notify you (email/Telegram)
 
 1) Hardware (recommended BOM)
-
-ESP32-CAM (AI-Thinker) + FTDI USB-TTL for flashing
-
-Mini PIR sensor (HC-SR501 mini or AM312) for motion trigger (optional but great)
-
-5V power: USB wall adapter (≥1A) + weatherproof cable
-
-Camera shelter: Small 3D-printed/DIY hood to keep rain off lens & board
-
-Bird feeder with a fixed perch in camera frame
-
-(Optional) IR LED board 850 nm for dusk/dawn (ESP32-CAM has no IR filter)
-
-(Optional) Raspberry Pi 4 / small PC to run the classifier server 24/7
+* ESP32-CAM (AI-Thinker) + FTDI USB-TTL for flashing
+* Mini PIR sensor (HC-SR501 mini or AM312) for motion trigger (optional but great)
+* 5V power: USB wall adapter (≥1A) + weatherproof cable
+* Camera shelter: Small 3D-printed/DIY hood to keep rain off lens & board
+* Bird feeder with a fixed perch in camera frame
+* (Optional) IR LED board 850 nm for dusk/dawn (ESP32-CAM has no IR filter)
+* (Optional) Raspberry Pi 4 / small PC to run the classifier server 24/7
 
 Mounting tips
-
-Put the ESP32-CAM 20–40 cm from the perch, slightly above and angled down.
-
-Keep the background simple (flat board or backdrop) → better classification.
-
-Add a focus shim if your ESP32-CAM lens needs refocus (twist ring, glue when done).
+* Put the ESP32-CAM 20–40 cm from the perch, slightly above and angled down.
+* Keep the background simple (flat board or backdrop) → better classification.
+* Add a focus shim if your ESP32-CAM lens needs refocus (twist ring, glue when done).
 
 2) Wiring (ESP32-CAM quick map)
-
-5V → 5V, GND → GND
-
-PIR OUT → GPIO 13 (pulled up internally)
-
-Keep the on-board flash LED disabled; add external IR board to 5V if needed.
+* 5V → 5V, GND → GND
+* PIR OUT → GPIO 13 (pulled up internally)
+* Keep the on-board flash LED disabled; add external IR board to 5V if needed.
 
 3) Software overview (two pieces)
-
-ESP32-CAM firmware: waits for PIR or interval → takes a JPEG → HTTP POST to server.
-
-Classifier server (Python/FastAPI): receives image → detects/crops bird → classifies species → saves to disk/SQLite → publishes MQTT event.
-
-If you built my “plant monitor + vision server,” you’ll recognize the structure—this just swaps in bird logic.
+* ESP32-CAM firmware: waits for PIR or interval → takes a JPEG → HTTP POST to server.
+* Classifier server (Python/FastAPI): receives image → detects/crops bird → classifies species → saves to disk/SQLite → publishes MQTT event.
 
 4) Flash the ESP32-CAM (Arduino IDE)
-
-Libraries: none beyond core (uses WiFi.h, HTTPClient.h, esp_camera.h).
+* Libraries: none beyond core (uses WiFi.h, HTTPClient.h, esp_camera.h).
 
 Sketch: esp32_cam_bird.ino
-
+`
 #include <Arduino.h>
 #include <WiFi.h>
 #include <HTTPClient.h>
@@ -135,32 +117,26 @@ void loop(){
   }
   delay(50);
 }
-
+`
 5) Classifier server (Python/FastAPI + ONNXRuntime)
 
-What it does
-
-Receives JPEG → decodes with Pillow/OpenCV
-
-(Optional) Runs a bird detector to crop the feeder perch (else uses center crop)
-
-Runs a species classifier (ONNX/TFLite) → top-K species
-
-Saves snapshot + JSON to disk/SQLite
-
-Publishes MQTT event: home/birds/<device>/event
-
-You can start with classifier-only (no detector) if the frame is clean (single bird close to center). If you want robustness with multiple objects, add a lightweight detector (e.g., MobileNet-SSD or YOLO-n) and then classify the crop.
+*What it does*:
+* Receives JPEG → decodes with Pillow/OpenCV
+* (Optional) Runs a bird detector to crop the feeder perch (else uses center crop)
+* Runs a species classifier (ONNX/TFLite) → top-K species
+* Saves snapshot + JSON to disk/SQLite
+* Publishes MQTT event: home/birds/<device>/event
+* You can start with classifier-only (no detector) if the frame is clean (single bird close to center). If you want robustness with multiple objects, add a lightweight detector (e.g., MobileNet-SSD or YOLO-n) and then classify the crop.
 
 Install
-
+`
 python -m venv .venv
 source .venv/bin/activate
 pip install fastapi uvicorn[standard] pillow onnxruntime opencv-python paho-mqtt sqlite-utils
-
+`
 
 server_birds.py
-
+`
 import io, os, time, json, sqlite3, uuid
 from pathlib import Path
 from typing import List
@@ -266,16 +242,15 @@ async def birds_predict(request: Request):
 
 @app.get("/birds/healthz")
 async def healthz(): return {"ok":True}
+`
 
+* Model & labels: Put an ONNX image classifier trained on your local species list in ./models/bird_classifier.onnx and a matching labels.txt (one species per line in the same output order). To start fast, you can fine-tune any MobileNet/EfficientNet on ~20–50 common backyard species (transfer learning).
 
-Model & labels: Put an ONNX image classifier trained on your local species list in ./models/bird_classifier.onnx and a matching labels.txt (one species per line in the same output order). To start fast, you can fine-tune any MobileNet/EfficientNet on ~20–50 common backyard species (transfer learning).
-
-Run
-
+**Run app**
+`
 uvicorn server_birds:app --host 0.0.0.0 --port 8000
-
+`
 6) Home Assistant (MQTT)
-
 Add an MQTT sensor (or use an MQTT “text” helper) to show the last species:
 
 sensor:
@@ -288,42 +263,27 @@ sensor:
 You can also template a confidence sensor, or trigger an automation when species in ["American Goldfinch","House Finch"].
 
 7) Notifications (optional)
-
-Telegram: Have your server script subprocess.run a curl to Telegram Bot API on each event.
-
-Email: Use smtplib or a webhook service.
-
-Rate-limit to 1 notification per X minutes per species to avoid spam.
+* Telegram: Have your server script subprocess.run a curl to Telegram Bot API on each event.
+* Email: Use smtplib or a webhook service.
+* Rate-limit to 1 notification per X minutes per species to avoid spam.
 
 8) Field tuning checklist
-
-Frame cleanliness: single perch, plain backdrop, consistent distance.
-
-Lighting: avoid strong backlight; add small diffuser over perch if harsh sun.
-
-Focus: twist lens to crisp detail at perch distance; dab glue to lock.
-
-PIR sensitivity: tune to trigger only when something lands at perch.
-
-Night: IR LED at 850 nm placed off-axis to reduce eye-shine glare.
+* Frame cleanliness: single perch, plain backdrop, consistent distance.
+* Lighting: avoid strong backlight; add small diffuser over perch if harsh sun.
+* Focus: twist lens to crisp detail at perch distance; dab glue to lock.
+* PIR sensitivity: tune to trigger only when something lands at perch.
+* Night: IR LED at 850 nm placed off-axis to reduce eye-shine glare.
 
 9) Improving recognition
-
-Start with a small label set (e.g., top 20 species you see).
-
-Collect & label your own feeder images for fine-tuning.
-
-Add a detector (e.g., MobileNet-SSD/YOLO “bird” class) → crop → classify (best accuracy).
-
-Train-time augmentations: random crop, brightness, slight rotation → improves robustness.
+* Start with a small label set (e.g., top 20 species you see).
+* Collect & label your own feeder images for fine-tuning.
+* Add a detector (e.g., MobileNet-SSD/YOLO “bird” class) → crop → classify (best accuracy).
+* Train-time augmentations: random crop, brightness, slight rotation → improves robustness.
 
 10) Maintenance & data
-
-All images saved under ./bird_events.
-
-SQLite log at ./bird_events/events.sqlite (id, timestamp, device, top-K, image file).
-
-Periodically archive (.zip) older months to NAS/Dropbox.
+* All images saved under ./bird_events.
+* SQLite log at ./bird_events/events.sqlite (id, timestamp, device, top-K, image file).
+* Periodically archive (.zip) older months to NAS/Dropbox.
 
 # training detection
 Path A — “Fastest way”: fine-tune a small model on your own photos (10–20 species)
@@ -363,6 +323,7 @@ pip install torch torchvision onnx onnxruntime opencv-python pillow tqdm
 Paste this as train_birds_to_onnx.py and run it. It uses MobileNetV3-Small, quick and accurate for small edge tasks.
 
 # train_birds_to_onnx.py
+`
 import os, json, time, numpy as np, torch
 from pathlib import Path
 from torch import nn, optim
@@ -381,6 +342,7 @@ LR = 3e-4
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 MEAN = (0.485, 0.456, 0.406)   # torchvision ImageNet mean/std
 STD  = (0.229, 0.224, 0.225)
+`
 
 # 1) Datasets & loaders
 train_tf = transforms.Compose([

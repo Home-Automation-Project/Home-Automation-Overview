@@ -9,3 +9,4 @@
 - **Drink Machine**:  Drink maker
 - **VR System**:  Full VR rig
 - **Vending Machine**:  Distribution of snacks
+- **Chess**
