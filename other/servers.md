@@ -1,6 +1,6 @@
 - **Home Automation Server**:  Server for home automation also suports routines, if-this-then-that logic, supports existing technologies, remotely accessible.
-- **[Media](../servers/media/overview.md)**: Movies, TV, books (ebook, physical, audio)
-- **Library**:  Electronic library catelog system
+- **[Media](../servers/media/overview.md)**: Movies, TV, books (ebook, physical, audio), notes, pictures, etc
+- **[Hosting](../servers/hosting.md)**: Docker and web hosting
 - **Journal System**:  Similar to the Captain/Personal Log system in TNG.  Video journaling with SR and keyword searching
 - **Where is**:  Similar to TNG, a system where you can ask and know the location of any family member
 - **Internet Control System**:  Internet Filtration/content control, DNS, 

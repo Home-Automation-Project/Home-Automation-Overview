@@ -141,3 +141,8 @@ NZBGet http://<pi-ip>:6789   nzbget / tegbzn6789 (default)
 
 ## Setup monitoring/alerting
 [View documentation](../../other/alert_monitoring.md)
+
+# Downloaders
+## Fetch metadata via Google Books/OpenLibrary
+## Download Books
+## Download Audio Books via Audnex

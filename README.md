@@ -45,3 +45,5 @@ Overview of the entire home automation project with links to individual projects
 - [Security](./other/security.md)
 - [Utilities & HVAC](./other/hvac_utilities.md)
 
+**NOTE**
+This [document](./other/network/overview.md) gives the recommended network, server and services order and setup
