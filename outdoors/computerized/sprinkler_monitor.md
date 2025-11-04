@@ -1,14 +1,18 @@
+# Sprinkler Automation
+Have water monitoring, smart watering and full automation of your irrigation system.
+
+## Smart Watering
+Uses the B-hyve system (some areas will give rebates for the purchase of this system).  This system will replace your current irrigation controller.  If you do not have an irrigation controller you will need to add electronic valves to your sprinkling system and wire them into the new controller. If you do not have an irrigation system follow these [instructions](../irrigation_installation.md) for setting one up.
+
+## Flow monitoring
+
 Sprinkler Flow Monitor with an ESP32 and a Hall-effect flow sensor. You’ll get live L/min, total liters, and leak/broken-head alerts in Home Assistant via MQTT.
 
-0) What you’ll build
-
-Hardware: ESP32 + in-line turbine (Hall) flow sensor on the main irrigation line
-
-Metrics: Instantaneous flow (L/min), total consumption (L), “flowing” boolean
-
-Smart: Detects unexpected flow (leak), or abnormally high flow (broken head)
-
-Integrations: MQTT sensors + optional HA utility_meter for daily/weekly totals
+### What you’ll build
+* Hardware: ESP32 + in-line turbine (Hall) flow sensor on the main irrigation line
+* Metrics: Instantaneous flow (L/min), total consumption (L), “flowing” boolean
+* Smart: Detects unexpected flow (leak), or abnormally high flow (broken head)
+* Integrations: MQTT sensors + optional HA utility_meter for daily/weekly totals
 
 1) Pick the right flow sensor (max reliability)
 
@@ -22,29 +26,19 @@ Typical spec (YF-S201 class):
 f (Hz) ≈ 7.5 × Q (L/min) → about 450 pulses per liter.
 ⚠️ These numbers vary by model and plumbing; you’ll calibrate (Step 7).
 
-Plumbing notes
-
-Put it on the main line after the backflow preventer and before zone branches.
-
-Install straight pipe runs (ideally >10× diameter upstream, >5× downstream) for accuracy.
-
-Arrow on body must match water direction. Use PTFE tape; don’t overtighten plastic threads.
-
-Add a small Y-strainer upstream if you have sediment.
+**Plumbing notes**
+* Put it on the main line after the backflow preventer and before zone branches.
+* Install straight pipe runs (ideally >10× diameter upstream, >5× downstream) for accuracy.
+* Arrow on body must match water direction. Use PTFE tape; don’t overtighten plastic threads.
+* Add a small Y-strainer upstream if you have sediment.
 
 2) Parts list
-
-ESP32 DevKit (WROOM-32)
-
-1× Hall flow sensor (thread size to match line)
-
-Weatherproof box (IP65), cable glands
-
-5V USB supply (≥1A), short USB cable
-
-Pull-up resistor 10kΩ from signal to 3.3V (if your sensor output is open-collector)
-
-Bypass/decoupling: 100 nF across sensor V+ to GND (near the sensor leads)
+* ESP32 DevKit (WROOM-32)
+* 1× Hall flow sensor (thread size to match line)
+* Weatherproof box (IP65), cable glands
+* 5V USB supply (≥1A), short USB cable
+* Pull-up resistor 10kΩ from signal to 3.3V (if your sensor output is open-collector)
+* Bypass/decoupling: 100 nF across sensor V+ to GND (near the sensor leads)
 
 3) Wiring (text diagram)
 [Flow Sensor]
@@ -55,18 +49,15 @@ Bypass/decoupling: 100 nF across sensor V+ to GND (near the sensor leads)
 [Pull-up] 10kΩ from GPIO25 to 3.3V (important if sensor is open-collector)
 
 
-Important
-
-Many Hall sensors are rated 5–24V and have an open-collector output. Power the sensor with 5V, but pull the output up to 3.3V, not 5V, to protect the ESP32.
-
-Keep the signal run short or use twisted pair (signal+GND).
-
-Avoid GPIOs 34–39 for interrupts (they’re input-only but fine); I use GPIO25 here.
+**Important**
+* Many Hall sensors are rated 5–24V and have an open-collector output. Power the sensor with 5V, but pull the output up to 3.3V, not 5V, to protect the ESP32.
+* Keep the signal run short or use twisted pair (signal+GND).
+* Avoid GPIOs 34–39 for interrupts (they’re input-only but fine); I use GPIO25 here.
 
 4) Firmware (Arduino IDE)
 
 Install ESP32 board support + PubSubClient (MQTT). Paste this as sprinkler_flow_monitor.ino, edit the config block at the top.
-
+`
 #include <Arduino.h>
 #include <WiFi.h>
 #include <PubSubClient.h>
@@ -188,11 +179,11 @@ void loop() {
 
   delay(5);
 }
-
+`
 5) Home Assistant (MQTT) quick config
 
 Sensors
-
+`
 mqtt:
   sensor:
     - name: "Sprinkler Flow (L/min)"
@@ -211,7 +202,7 @@ mqtt:
       state_topic: "home/sprinkler/flow1/state"
       value_template: "{{ 'ON' if value_json.flowing else 'OFF' }}"
       device_class: moving
-
+`
 
 Daily usage counter
 
@@ -252,45 +243,26 @@ automation:
           message: "Sprinkler flow unusually high — check for a broken head."
 
 6) Power & enclosure
-
-Place ESP32 + buck/USB supply in an IP65 box near the plumbing.
-
-Keep the sensor body outside; run the 3-wire cable into the box.
-
-Add a 100 µF electrolytic across ESP32 5V/GND to ride out Wi-Fi bursts.
-
-Common ground between ESP32 and sensor is required.
+* Place ESP32 + buck/USB supply in an IP65 box near the plumbing.
+* Keep the sensor body outside; run the 3-wire cable into the box.
+* Add a 100 µF electrolytic across ESP32 5V/GND to ride out Wi-Fi bursts.
+* Common ground between ESP32 and sensor is required.
 
 7) Calibration (do this once)
-
-In HA (or Serial), zero your total liters (flash or reset your counter).
-
-Open a single zone that gives steady flow into a bucket/metered container.
-
-Run until you’ve collected a known volume (e.g., 10.0 L).
-
-Read the pulse count (or compute from liters_total if you kept default 450).
-
-If your firmware only shows liters_total, also capture the delta pulses during the run (temporarily print pulseCount to Serial, or compute: deltaP = liters_total * PULSES_PER_L if default was close).
-
-Compute K-factor:
-
+* In HA (or Serial), zero your total liters (flash or reset your counter).
+* Open a single zone that gives steady flow into a bucket/metered container.
+* Run until you’ve collected a known volume (e.g., 10.0 L).
+* Read the pulse count (or compute from liters_total if you kept default 450).
+* If your firmware only shows liters_total, also capture the delta pulses during the run (temporarily print pulseCount to Serial, or compute: deltaP = liters_total * PULSES_PER_L if default was close).
+* Compute K-factor:
 PULSES_PER_L = (delta pulses) / (measured liters)
-
 
 Put that new value in the sketch, reflash, repeat a quick check.
 
 Example: You captured 19,000 pulses for 40.0 liters → PULSES_PER_L = 475.0
 
-8) Variations & upgrades
 
-Pressure sensor (0–10 bar analog) on ESP32 ADC to enrich diagnostics.
-
-Per-zone analytics: If you have your irrigation controller integrated in HA, tag each “flowing” period with the active zone entity for zone-by-zone water usage.
-
-Non-invasive ultrasonic clamp-on (expensive, less DIY), if you can’t cut into the pipe.
-
-## add pressure sensor
+## Add pressure sensor
 line pressure sensor to your sprinkler flow monitor so you can see PSI/bar, catch low-pressure/broken head events faster, and spot leaks even when flow is small.
 
 1) Pick a sensor (3 solid choices)
@@ -368,7 +340,7 @@ We’ll read multiple samples, median+average, then map voltage → bar/PSI.
 5) Drop-in firmware (flow + pressure + MQTT)
 
 Paste this over your current sketch (or merge the pressure parts). Change Wi-Fi/MQTT and constants at the top.
-
+`
 #include <Arduino.h>
 #include <WiFi.h>
 #include <PubSubClient.h>
@@ -549,7 +521,7 @@ void loop() {
 
   delay(5);
 }
-
+`
 6) Home Assistant updates
 
 Add/extend sensors to read pressure and a broken-head flag:
