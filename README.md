@@ -48,3 +48,4 @@ This [document](./other/network/overview.md) gives the recommended network, serv
 - [Floor cleaning](./other/floors.md)
 - [Security](./other/security.md)
 - [Utilities & HVAC](./other/hvac_utilities.md)
+- [Closets](https://github.com/Home-Automation-Project/closet-organizer/blob/main/README.md)
