@@ -10,6 +10,9 @@ Vault space (digital archive) is managed by Karakeep
 # Reference Manager
 Reference/citation management by Zotero
 
+# Warranty Tracker/Organizer
+Track warranty information, handled by Warracker.
+
 ## Installation process
 ## Setup process
 

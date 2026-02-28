@@ -9,3 +9,10 @@
 - **3D Body Scan**
 - **Massage**
 - **TENs**
+- **QR Codes for equipment use**
+
+## Equipment Use
+* Leg extension machine (leg extensions)[] (hamstring curls)[]
+* (arm blaster)[]
+* (trap bar)[]
+* (Roman Chair)[]
