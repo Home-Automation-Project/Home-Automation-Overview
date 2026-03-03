@@ -1,4 +1,4 @@
-# Hosting Docker Images
+# Hosting Docker Images and Python Packages
 
 This will setup HTTPS, a real hostname (e.g., registry.lan), and logins
 
