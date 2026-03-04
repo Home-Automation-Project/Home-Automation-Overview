@@ -14,18 +14,18 @@
 2. SSH access or keyboard/monitor
 3. [External storage](./storage.md)
 4. Install docker
-`sudo apt update && sudo apt upgrade -y`
-`sudo apt install vim -y`
+`sudo apt update && sudo apt full-upgrade -y`
+`sudo apt install -y cifs-utils`
+`sudo mkdir -p /mnt/nas`
+`sudo apt install -y git curl htop vim`
 `curl -sSL https://get.docker.com | sh`
+`sudo apt install docker-compose-plugin`
 `sudo usermod -aG docker $USER`
-`newgrp docker`
-`sudo apt install -y docker-compose`
-7. Create Folder Structure
-`mkdir -p ~/media-server`
-`cd ~/media-server`
-8. Inside ~/media-server, create a [docker-compose.yml](./scripts/book-media-docker-compose.yml) file
-9. Launch the Stack
-`cd ~/media-server`
+`sudo mkdir -p /opt/audiobookshelf/config`
+`sudo chown -R 1000:1000 /opt/audiobookshelf`
+5. log out and then log back in
+6. Create a [docker-compose.yml](./scripts/book-media-docker-compose.yml) file
+7. Launch the Stack
 `docker-compose up -d`
 
 ### Set to autostart on reboots
